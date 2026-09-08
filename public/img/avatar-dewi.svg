@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="50" fill="#c07848"/>
+  <!-- Neck -->
+  <rect x="39" y="67" width="22" height="16" rx="4" fill="#c47a4a"/>
+  <!-- Top / baju warna cerah -->
+  <ellipse cx="50" cy="95" rx="34" ry="18" fill="#c0392b"/>
+  <!-- Head -->
+  <ellipse cx="50" cy="44" rx="21" ry="23" fill="#d4905e"/>
+  <!-- Long hair - back -->
+  <rect x="28" y="28" width="44" height="48" rx="10" fill="#1a0e05"/>
+  <!-- Face over hair -->
+  <ellipse cx="50" cy="46" rx="19" ry="22" fill="#d4905e"/>
+  <!-- Hair top and sides -->
+  <ellipse cx="50" cy="24" rx="20" ry="11" fill="#1a0e05"/>
+  <!-- Hair parting -->
+  <path d="M50 16 Q52 28 50 35" stroke="#2c1a0a" stroke-width="2" fill="none"/>
+  <!-- Left hair side -->
+  <rect x="28" y="30" width="5" height="40" rx="3" fill="#1a0e05"/>
+  <!-- Right hair side -->
+  <rect x="67" y="30" width="5" height="40" rx="3" fill="#1a0e05"/>
+  <!-- Left ear -->
+  <ellipse cx="31" cy="47" rx="3" ry="4" fill="#c47a4a"/>
+  <!-- Right ear -->
+  <ellipse cx="69" cy="47" rx="3" ry="4" fill="#c47a4a"/>
+  <!-- Small earring left -->
+  <circle cx="31" cy="52" r="2" fill="#f0c040"/>
+  <!-- Small earring right -->
+  <circle cx="69" cy="52" r="2" fill="#f0c040"/>
+  <!-- Eyebrows - arched feminine -->
+  <path d="M36 35 Q41 31 46 34" stroke="#1a0e05" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M54 34 Q59 31 64 35" stroke="#1a0e05" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Eyes - with lashes suggestion -->
+  <ellipse cx="41" cy="41" rx="5" ry="4" fill="white"/>
+  <ellipse cx="59" cy="41" rx="5" ry="4" fill="white"/>
+  <circle cx="41" cy="41" r="2.8" fill="#2b1810"/>
+  <circle cx="59" cy="41" r="2.8" fill="#2b1810"/>
+  <circle cx="42" cy="40" r="0.9" fill="white"/>
+  <circle cx="60" cy="40" r="0.9" fill="white"/>
+  <!-- Eyelash lines -->
+  <path d="M36 39 L35 37 M38 38 L37 36 M40 37 L40 35" stroke="#1a0e05" stroke-width="1" fill="none"/>
+  <path d="M54 38 L53 36 M56 38 L56 35.5 M58 39 L59 37 M61 39 L62 37" stroke="#1a0e05" stroke-width="1" fill="none"/>
+  <!-- Nose -->
+  <ellipse cx="50" cy="50" rx="2.8" ry="1.8" fill="#b86e42"/>
+  <path d="M47 49 Q50 53 53 49" stroke="#a05830" stroke-width="1.2" fill="none"/>
+  <!-- Lips - fuller -->
+  <path d="M41 57 Q50 65 59 57" stroke="#9e3020" stroke-width="1.5" fill="none"/>
+  <path d="M42 57 Q46 60 50 60 Q54 60 58 57" fill="#e06050" opacity="0.8"/>
+  <path d="M42 57 Q46 54.5 50 55 Q54 54.5 58 57" fill="#c84840" opacity="0.7"/>
+</svg>

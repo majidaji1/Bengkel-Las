@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3a3a3a"/><stop offset="40%" stop-color="#aaa"/><stop offset="100%" stop-color="#3a3a3a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect x="0" y="0" width="60" height="400" fill="#1e1e1e"/>
+  <rect x="540" y="0" width="60" height="400" fill="#1e1e1e"/>
+  <rect x="0" y="0" width="600" height="50" fill="#1e1e1e"/>
+  <rect x="0" y="350" width="600" height="50" fill="#1e1e1e"/>
+  <rect x="60" y="50" width="480" height="300" fill="#07070f"/>
+  <rect x="60" y="50" width="480" height="14" fill="#e8680a"/>
+  <rect x="60" y="336" width="480" height="14" fill="#e8680a"/>
+  <rect x="60" y="50" width="14" height="300" fill="#e8680a"/>
+  <rect x="526" y="50" width="14" height="300" fill="#e8680a"/>
+  <g fill="url(#bar)">
+    <rect x="88" y="56" width="11" height="288" rx="2"/>
+    <rect x="140" y="56" width="11" height="288" rx="2"/>
+    <rect x="192" y="56" width="11" height="288" rx="2"/>
+    <rect x="244" y="56" width="11" height="288" rx="2"/>
+    <rect x="296" y="56" width="11" height="288" rx="2"/>
+    <rect x="348" y="56" width="11" height="288" rx="2"/>
+    <rect x="400" y="56" width="11" height="288" rx="2"/>
+    <rect x="452" y="56" width="11" height="288" rx="2"/>
+    <rect x="504" y="56" width="11" height="288" rx="2"/>
+  </g>
+  <g stroke="#e8680a" stroke-width="2.5" fill="none" opacity="0.85">
+    <circle cx="93" cy="130" r="14"/><circle cx="93" cy="130" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="93" cy="220" r="14"/><circle cx="93" cy="220" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="145" cy="130" r="14"/><circle cx="145" cy="130" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="145" cy="220" r="14"/><circle cx="145" cy="220" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="197" cy="130" r="14"/><circle cx="197" cy="130" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="197" cy="220" r="14"/><circle cx="197" cy="220" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="249" cy="130" r="14"/><circle cx="249" cy="130" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="249" cy="220" r="14"/><circle cx="249" cy="220" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="301" cy="130" r="14"/><circle cx="301" cy="130" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="301" cy="220" r="14"/><circle cx="301" cy="220" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="353" cy="130" r="14"/><circle cx="353" cy="130" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="353" cy="220" r="14"/><circle cx="353" cy="220" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="405" cy="130" r="14"/><circle cx="405" cy="130" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="405" cy="220" r="14"/><circle cx="405" cy="220" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="457" cy="130" r="14"/><circle cx="457" cy="130" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="457" cy="220" r="14"/><circle cx="457" cy="220" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="509" cy="130" r="14"/><circle cx="509" cy="130" r="6" fill="#e8680a" stroke="none"/>
+    <circle cx="509" cy="220" r="14"/><circle cx="509" cy="220" r="6" fill="#e8680a" stroke="none"/>
+  </g>
+  <g fill="#e8680a">
+    <polygon points="88,56 98,56 93,42"/><polygon points="140,56 150,56 145,42"/>
+    <polygon points="192,56 202,56 197,42"/><polygon points="244,56 254,56 249,42"/>
+    <polygon points="296,56 306,56 301,42"/><polygon points="348,56 358,56 353,42"/>
+    <polygon points="400,56 410,56 405,42"/><polygon points="452,56 462,56 457,42"/>
+    <polygon points="504,56 514,56 509,42"/>
+  </g>
+  <rect x="180" y="358" width="240" height="28" rx="14" fill="#e8680a" opacity="0.15" stroke="#e8680a" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="300" y="377" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#ff9a44" letter-spacing="1.5">TRALIS ORNAMEN</text>
+</svg>

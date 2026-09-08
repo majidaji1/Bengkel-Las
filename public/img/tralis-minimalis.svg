@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#333"/><stop offset="30%" stop-color="#999"/>
+      <stop offset="70%" stop-color="#999"/><stop offset="100%" stop-color="#333"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect x="0" y="0" width="70" height="400" fill="#1e1e1e"/>
+  <rect x="530" y="0" width="70" height="400" fill="#1e1e1e"/>
+  <rect x="0" y="0" width="600" height="55" fill="#1e1e1e"/>
+  <rect x="0" y="345" width="600" height="55" fill="#1e1e1e"/>
+  <rect x="70" y="55" width="460" height="290" fill="#080810"/>
+  <rect x="70" y="55" width="460" height="10" fill="#e8680a"/>
+  <rect x="70" y="335" width="460" height="10" fill="#e8680a"/>
+  <rect x="70" y="55" width="10" height="290" fill="#e8680a"/>
+  <rect x="520" y="55" width="10" height="290" fill="#e8680a"/>
+  <g fill="url(#bar)">
+    <rect x="97" y="60" width="12" height="280" rx="2"/>
+    <rect x="132" y="60" width="12" height="280" rx="2"/>
+    <rect x="167" y="60" width="12" height="280" rx="2"/>
+    <rect x="202" y="60" width="12" height="280" rx="2"/>
+    <rect x="237" y="60" width="12" height="280" rx="2"/>
+    <rect x="272" y="60" width="12" height="280" rx="2"/>
+    <rect x="307" y="60" width="12" height="280" rx="2"/>
+    <rect x="342" y="60" width="12" height="280" rx="2"/>
+    <rect x="377" y="60" width="12" height="280" rx="2"/>
+    <rect x="412" y="60" width="12" height="280" rx="2"/>
+    <rect x="447" y="60" width="12" height="280" rx="2"/>
+    <rect x="482" y="60" width="12" height="280" rx="2"/>
+    <rect x="517" y="60" width="12" height="280" rx="2"/>
+  </g>
+  <g fill="white" opacity="0.13">
+    <rect x="98" y="60" width="4" height="280" rx="1"/>
+    <rect x="133" y="60" width="4" height="280" rx="1"/>
+    <rect x="168" y="60" width="4" height="280" rx="1"/>
+    <rect x="203" y="60" width="4" height="280" rx="1"/>
+    <rect x="238" y="60" width="4" height="280" rx="1"/>
+    <rect x="273" y="60" width="4" height="280" rx="1"/>
+    <rect x="308" y="60" width="4" height="280" rx="1"/>
+    <rect x="343" y="60" width="4" height="280" rx="1"/>
+    <rect x="378" y="60" width="4" height="280" rx="1"/>
+    <rect x="413" y="60" width="4" height="280" rx="1"/>
+    <rect x="448" y="60" width="4" height="280" rx="1"/>
+    <rect x="483" y="60" width="4" height="280" rx="1"/>
+    <rect x="518" y="60" width="4" height="280" rx="1"/>
+  </g>
+  <rect x="80" y="145" width="440" height="12" fill="url(#bar)" rx="2"/>
+  <rect x="80" y="243" width="440" height="12" fill="url(#bar)" rx="2"/>
+  <g fill="#e8680a">
+    <circle cx="103" cy="151" r="4"/><circle cx="138" cy="151" r="4"/><circle cx="173" cy="151" r="4"/>
+    <circle cx="208" cy="151" r="4"/><circle cx="243" cy="151" r="4"/><circle cx="278" cy="151" r="4"/>
+    <circle cx="313" cy="151" r="4"/><circle cx="348" cy="151" r="4"/><circle cx="383" cy="151" r="4"/>
+    <circle cx="418" cy="151" r="4"/><circle cx="453" cy="151" r="4"/><circle cx="488" cy="151" r="4"/>
+    <circle cx="523" cy="151" r="4"/>
+    <circle cx="103" cy="249" r="4"/><circle cx="173" cy="249" r="4"/><circle cx="243" cy="249" r="4"/>
+    <circle cx="313" cy="249" r="4"/><circle cx="383" cy="249" r="4"/><circle cx="453" cy="249" r="4"/>
+    <circle cx="523" cy="249" r="4"/>
+  </g>
+  <rect x="175" y="356" width="250" height="28" rx="14" fill="#e8680a" opacity="0.15" stroke="#e8680a" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="300" y="375" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#ff9a44" letter-spacing="1.5">TRALIS MINIMALIS</text>
+</svg>

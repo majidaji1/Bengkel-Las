@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <linearGradient id="wf" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4a4a4a"/><stop offset="50%" stop-color="#999"/><stop offset="100%" stop-color="#4a4a4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect x="0" y="335" width="600" height="65" fill="#111" opacity="0.9"/>
+  <line x1="0" y1="335" x2="600" y2="335" stroke="#444" stroke-width="2"/>
+  <g fill="url(#wf)">
+    <rect x="90" y="180" width="28" height="155" rx="1"/>
+    <rect x="76" y="180" width="56" height="12" rx="2"/>
+    <rect x="76" y="323" width="56" height="12" rx="2"/>
+  </g>
+  <g fill="url(#wf)">
+    <rect x="482" y="180" width="28" height="155" rx="1"/>
+    <rect x="468" y="180" width="56" height="12" rx="2"/>
+    <rect x="468" y="323" width="56" height="12" rx="2"/>
+  </g>
+  <rect x="75" y="95" width="450" height="90" fill="#b0d4ff" opacity="0.18" rx="3"/>
+  <rect x="75" y="95" width="450" height="90" fill="none" stroke="#88bbff" stroke-width="1.5" rx="3" opacity="0.4"/>
+  <g stroke="#6699cc" stroke-width="1.5" opacity="0.5">
+    <line x1="165" y1="95" x2="165" y2="185"/><line x1="255" y1="95" x2="255" y2="185"/>
+    <line x1="345" y1="95" x2="345" y2="185"/><line x1="435" y1="95" x2="435" y2="185"/>
+  </g>
+  <rect x="75" y="183" width="450" height="14" fill="url(#wf)" rx="2"/>
+  <circle cx="104" cy="185" r="9" fill="#e8680a" opacity="0.9"/>
+  <circle cx="496" cy="185" r="9" fill="#e8680a" opacity="0.9"/>
+  <polygon points="90,185 118,185 90,215" fill="#e8680a" opacity="0.7"/>
+  <polygon points="510,185 482,185 510,215" fill="#e8680a" opacity="0.7"/>
+  <rect x="175" y="350" width="250" height="32" rx="16" fill="#e8680a" opacity="0.15" stroke="#e8680a" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="300" y="371" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#ff9a44" letter-spacing="1.5">KANOPI BAJA WF</text>
+</svg>

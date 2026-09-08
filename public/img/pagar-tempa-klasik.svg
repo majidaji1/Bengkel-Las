@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1412"/><stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <linearGradient id="ir" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2a2a2a"/><stop offset="40%" stop-color="#888"/><stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect x="0" y="310" width="600" height="90" fill="#0f0f0f"/>
+  <line x1="0" y1="310" x2="600" y2="310" stroke="#3a3a3a" stroke-width="2"/>
+  <g fill="#555">
+    <rect x="55" y="80" width="38" height="235" rx="3"/>
+    <rect x="45" y="75" width="58" height="16" rx="4"/>
+    <rect x="45" y="310" width="58" height="10" rx="2"/>
+  </g>
+  <rect x="60" y="55" width="28" height="25" fill="#e8680a" rx="2"/>
+  <polygon points="74,55 88,55 88,78 60,78" fill="#777"/>
+  <g fill="#555">
+    <rect x="507" y="80" width="38" height="235" rx="3"/>
+    <rect x="497" y="75" width="58" height="16" rx="4"/>
+    <rect x="497" y="310" width="58" height="10" rx="2"/>
+  </g>
+  <rect x="512" y="55" width="28" height="25" fill="#e8680a" rx="2"/>
+  <polygon points="526,55 540,55 540,78 512,78" fill="#777"/>
+  <rect x="93" y="105" width="414" height="14" fill="url(#ir)" rx="3"/>
+  <rect x="93" y="270" width="414" height="14" fill="url(#ir)" rx="3"/>
+  <rect x="93" y="88" width="414" height="8" fill="#e8680a" opacity="0.7" rx="2"/>
+  <g fill="url(#ir)">
+    <rect x="112" y="112" width="10" height="162" rx="2"/>
+    <rect x="148" y="112" width="10" height="162" rx="2"/>
+    <rect x="184" y="112" width="10" height="162" rx="2"/>
+    <rect x="220" y="112" width="10" height="162" rx="2"/>
+    <rect x="256" y="112" width="10" height="162" rx="2"/>
+    <rect x="292" y="112" width="10" height="162" rx="2"/>
+    <rect x="328" y="112" width="10" height="162" rx="2"/>
+    <rect x="364" y="112" width="10" height="162" rx="2"/>
+    <rect x="400" y="112" width="10" height="162" rx="2"/>
+    <rect x="436" y="112" width="10" height="162" rx="2"/>
+    <rect x="472" y="112" width="10" height="162" rx="2"/>
+  </g>
+  <g fill="#e8680a">
+    <polygon points="112,112 122,112 117,96"/><polygon points="148,112 158,112 153,96"/>
+    <polygon points="184,112 194,112 189,96"/><polygon points="220,112 230,112 225,96"/>
+    <polygon points="256,112 266,112 261,96"/><polygon points="292,112 302,112 297,96"/>
+    <polygon points="328,112 338,112 333,96"/><polygon points="364,112 374,112 369,96"/>
+    <polygon points="400,112 410,112 405,96"/><polygon points="436,112 446,112 441,96"/>
+    <polygon points="472,112 482,112 477,96"/>
+  </g>
+  <g stroke="#e8680a" stroke-width="2.5" fill="none" opacity="0.75">
+    <path d="M112 185 Q130 168 148 185 Q166 202 148 219 Q130 236 112 219 Q94 202 112 185"/>
+    <path d="M292 185 Q310 168 328 185 Q346 202 328 219 Q310 236 292 219 Q274 202 292 185"/>
+    <path d="M472 185 Q490 168 508 185 Q526 202 508 219 Q490 236 472 219 Q454 202 472 185"/>
+  </g>
+  <rect x="165" y="320" width="270" height="30" rx="15" fill="#e8680a" opacity="0.15" stroke="#e8680a" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="300" y="340" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#ff9a44" letter-spacing="1.5">PAGAR TEMPA KLASIK</text>
+</svg>

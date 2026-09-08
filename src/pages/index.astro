@@ -1,0 +1,329 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, NAV, STATS, LAYANAN, PRODUK, PROSES, TESTIMONI } from '../data/site';
+const wa = (teks: string) => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(teks)}`;
+const waDefault = wa('Halo, saya ingin konsultasi mengenai produk Adjie Jaya Makmur.');
+const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
+---
+<BaseLayout title={`${SITE.name} — ${SITE.tagline}`} description={SITE.description}>
+  <a class="skip-link" href="#main">Langsung ke konten</a>
+
+  <!-- WA Float -->
+  <a href={waDefault} target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat WhatsApp">
+    <div class="wa-float-pulse" aria-hidden="true"></div>
+    <svg class="wa-float-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.526 5.827L.073 23.27a.75.75 0 00.92.92l5.444-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.93-1.344l-.354-.211-3.674.981.982-3.596-.23-.37A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+    <span class="wa-float-label">Chat WhatsApp</span>
+  </a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" aria-label="Navigasi utama">
+    <div class="container nav-inner">
+      <a href="#hero" class="logo" aria-label="Karya Baja Beranda">
+        <div class="logo-mark" aria-hidden="true">⚙</div>
+        <span class="logo-name">Adjie Jaya Makmur</span>
+      </a>
+      <div class="nav-links">{NAV.map(l => <a href={l.href}>{l.label}</a>)}</div>
+      <a href={waDefault} target="_blank" rel="noopener noreferrer" class="nav-cta">Konsultasi Gratis <span aria-hidden="true">↗</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+    {NAV.map(l => <a href={l.href}>{l.label} <span aria-hidden="true">→</span></a>)}
+    <a href={waDefault} target="_blank" rel="noopener noreferrer" style="color:var(--accent);border-bottom:none;margin-top:8px;">Konsultasi Gratis ↗</a>
+  </div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="hero-left">
+          <p class="eyebrow hero-eyebrow">Bengkel Las Profesional · Kaliwungu, Jawa Tengah</p>
+          <h1 class="hero-title">Konstruksi Besi<br /><span class="hero-title-accent">Berkualitas.</span></h1>
+          <p class="hero-sub">{SITE.tagline}</p>
+          <div class="hero-tags">
+            {['Kanopi','Tralis','Pagar','Pintu Besi','Tangga','Railing'].map(t => (
+              <span class="hero-tag"><span class="hero-tag-dot" aria-hidden="true"></span>{t}</span>
+            ))}
+          </div>
+          <div class="hero-actions">
+            <a href="#produk" class="btn btn-primary"><span class="btn-icon" aria-hidden="true">⊞</span> Lihat Produk</a>
+            <a href={waDefault} target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/></svg>
+              Konsultasi Gratis
+            </a>
+          </div>
+        </div>
+        <div class="hero-right" aria-hidden="true">
+          <div class="hero-card">
+            <div class="stats-grid">
+              {STATS.map(s => (
+                <div class="stat-item">
+                  <div class="stat-value">{s.value.replace('+','')}<span>{s.value.includes('+') ? '+' : ''}</span></div>
+                  <div class="stat-label">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="hero-badge">
+            <div class="hero-badge-icon">🔥</div>
+            <div class="hero-badge-text"><strong>Pengerjaan Rapi & Presisi</strong><span>Setiap sambungan dicek kualitasnya</span></div>
+          </div>
+          <div class="hero-badge">
+            <div class="hero-badge-icon">📍</div>
+            <div class="hero-badge-text"><strong>Melayani Kaliwungu & Sekitarnya</strong><span>{SITE.openHours}</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span>Gulir ke bawah</span><div class="scroll-line"></div></div>
+    </section>
+
+    <!-- LAYANAN -->
+    <section id="layanan" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Apa yang Kami Kerjakan</p>
+          <h2>Semua Kebutuhan<br />Konstruksi Besi Anda.</h2>
+          <p>Dari kanopi rumah tinggal hingga konstruksi besi skala besar — kami kerjakan dengan standar yang sama: presisi, kuat, dan rapi.</p>
+        </div>
+        <div class="layanan-grid">
+          {LAYANAN.map(l => (
+            <div class="layanan-item">
+              <div class="layanan-icon" aria-hidden="true">{l.icon}</div>
+              <h3 class="layanan-title">{l.title}</h3>
+              <p class="layanan-desc">{l.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUK -->
+    <section id="produk" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Katalog Produk</p>
+          <h2>Pilih Sesuai<br />Kebutuhan Anda.</h2>
+          <p>Semua produk tersedia dalam berbagai ukuran, motif, dan finishing. Harga sudah termasuk survei dan pemasangan.</p>
+        </div>
+        <div class="produk-filter" role="group" aria-label="Filter kategori produk">
+          {kategori.map((k, i) => (
+            <button class={`filter-btn${i === 0 ? ' active' : ''}`} data-kat={k}>{k}</button>
+          ))}
+        </div>
+        <div class="produk-grid">
+          {PRODUK.map(p => (
+            <article class="produk-card" data-kategori={p.kategori}>
+              <div class="produk-img">
+                <img
+                  class="produk-img-svg"
+                  src={p.foto}
+                  alt={p.nama}
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                />
+                <span class="produk-kat-badge">{p.kategori}</span>
+              </div>
+              <div class="produk-body">
+                <h3 class="produk-nama">{p.nama}</h3>
+                <p class="produk-bahan">{p.bahan}</p>
+                <p class="produk-harga">{p.harga}</p>
+                <a href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(p.wa)}`} target="_blank" rel="noopener noreferrer" class="produk-wa-link">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/></svg>
+                  Tanya Harga & Detail
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PROSES -->
+    <section id="proses" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Cara Kerja Kami</p>
+          <h2>Proses Sederhana,<br />Hasil Memuaskan.</h2>
+        </div>
+        <div class="proses-wrap">
+          <div class="proses-list">
+            {PROSES.map(p => (
+              <div class="proses-item">
+                <div class="proses-num" aria-hidden="true">{p.step}</div>
+                <div class="proses-body">
+                  <h3 class="proses-title">{p.title}</h3>
+                  <p class="proses-desc">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="proses-right">
+            <p class="proses-cta-title">Mulai dengan konsultasi gratis</p>
+            <p class="proses-cta-desc">Tidak perlu bingung mau mulai dari mana. Ceritakan kebutuhan Anda, kami yang urus sisanya.</p>
+            <div class="proses-cta-tags">
+              <span class="proses-cta-tag">Survei lokasi tanpa biaya</span>
+              <span class="proses-cta-tag">Harga transparan, tanpa biaya tersembunyi</span>
+              <span class="proses-cta-tag">Garansi kerapian pengerjaan</span>
+              <span class="proses-cta-tag">Bahan baku berkualitas pilihan</span>
+            </div>
+            <a href={waDefault} target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;justify-content:center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/></svg>
+              Mulai Konsultasi
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section id="testimoni" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Yang Pelanggan Bilang</p>
+          <h2>Cerita Nyata dari<br />Pelanggan Kami.</h2>
+          <p>Kepuasan pelanggan adalah standar kami, bukan sekadar tujuan.</p>
+        </div>
+        <div class="testimoni-grid">
+          {TESTIMONI.map(t => (
+            <div class="testimoni-card">
+              <div class="testimoni-top">
+                <div class="rating" aria-label={`${t.rating} bintang`}>{'★'.repeat(t.rating)}</div>
+                <div class="testimoni-badge">Pelanggan Verified ✓</div>
+              </div>
+              <p class="testimoni-teks">"{t.teks}"</p>
+              <div class="testimoni-author">
+                <img
+                  class="testimoni-avatar"
+                  src={t.foto}
+                  alt={`Foto profil ${t.nama}`}
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                />
+                <div class="testimoni-info">
+                  <div class="testimoni-nama">{t.nama}</div>
+                  <div class="testimoni-meta">
+                    <span class="testimoni-pekerjaan">{t.pekerjaan}</span>
+                    <span class="testimoni-sep" aria-hidden="true">·</span>
+                    <span class="testimoni-lokasi">{t.lokasi}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK & MAPS -->
+    <section id="kontak" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Hubungi Kami</p>
+          <h2>Siap Membantu<br />Kebutuhan Anda.</h2>
+          <p>Kunjungi bengkel kami langsung, atau hubungi via WhatsApp untuk konsultasi gratis tanpa syarat.</p>
+        </div>
+        <div class="kontak-grid">
+          <div class="maps-wrap">
+            <iframe src={SITE.mapsEmbed} loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Karya Baja di Google Maps" allowfullscreen></iframe>
+          </div>
+          <div class="kontak-info">
+            <a href={waDefault} target="_blank" rel="noopener noreferrer" class="kontak-card-link kontak-card-wa">
+              <div class="kontak-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.526 5.827L.073 23.27a.75.75 0 00.92.92l5.444-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.93-1.344l-.354-.211-3.674.981.982-3.596-.23-.37A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+              </div>
+              <div class="kontak-card-body">
+                <div class="kontak-card-title">WhatsApp</div>
+                <div class="kontak-card-val">{SITE.phone}</div>
+                <div class="kontak-card-sub">Respons cepat · Konsultasi gratis</div>
+              </div>
+              <span class="kontak-card-arr" aria-hidden="true">↗</span>
+            </a>
+            <a href={`tel:${SITE.phone}`} class="kontak-card-link">
+              <div class="kontak-card-icon">📞</div>
+              <div class="kontak-card-body">
+                <div class="kontak-card-title">Telepon</div>
+                <div class="kontak-card-val">{SITE.phone}</div>
+                <div class="kontak-card-sub">{SITE.openHours}</div>
+              </div>
+              <span class="kontak-card-arr" aria-hidden="true">↗</span>
+            </a>
+            <div class="kontak-card-static">
+              <div class="kontak-card-icon">📍</div>
+              <div class="kontak-card-body">
+                <div class="kontak-card-title">Alamat Bengkel</div>
+                <div class="kontak-card-val">{SITE.address}</div>
+                <div class="kontak-card-sub">{SITE.openHours}</div>
+              </div>
+            </div>
+            <div class="kontak-card-static">
+              <div class="kontak-card-icon">✉️</div>
+              <div class="kontak-card-body">
+                <div class="kontak-card-title">Email</div>
+                <div class="kontak-card-val">{SITE.email}</div>
+                <div class="kontak-card-sub">Untuk penawaran & kerjasama</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-mark" aria-hidden="true">⚙</div>
+        <div>
+          <div class="footer-name">Adjie Jaya Makmur</div>
+          <div class="footer-tagline">Spesialis Konstruksi Besi · Kaliwungu, Jawa Tengah</div>
+        </div>
+      </div>
+      <div class="footer-links">{NAV.map(l => <a href={l.href}>{l.label}</a>)}</div>
+      <div class="footer-copy">© {SITE.yearFounded}–{new Date().getFullYear()} Adjie Jaya Makmur. Semua hak dilindungi.</div>
+    </div>
+  </footer>
+</BaseLayout>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar?.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // Hamburger
+  const btn = document.getElementById('hamburger') as HTMLButtonElement;
+  const mobileNav = document.getElementById('mobile-nav');
+  btn?.addEventListener('click', () => {
+    const isOpen = mobileNav?.classList.toggle('open') ?? false;
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+  mobileNav?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      btn?.classList.remove('open');
+      btn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Product filter
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const cards = document.querySelectorAll<HTMLElement>('.produk-card');
+  filterBtns.forEach(b => {
+    b.addEventListener('click', () => {
+      filterBtns.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const kat = b.dataset.kat;
+      cards.forEach(card => {
+        card.style.display = (kat === 'Semua' || card.dataset.kategori === kat) ? '' : 'none';
+      });
+    });
+  });
+</script>
