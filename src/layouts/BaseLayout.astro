@@ -2,7 +2,7 @@
 import '../styles/global.css';
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://karyabaja.com');
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://adjiejayamakmur.com');
 ---
 <!doctype html>
 <html lang="id">
@@ -10,7 +10,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://karyabaja.c
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0d0d0d" />
+    <meta name="theme-color" content="#f8f7f4" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />

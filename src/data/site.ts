@@ -6,12 +6,12 @@ export const SITE = {
   description: `Bengkel las profesional di Kaliwungu, Jawa Tengah. Kanopi baja ringan, tralis jendela, pagar ornamen, pintu besi, tangga, dan railing — dikerjakan presisi, harga transparan.`,
   phone: `081393341889`,
   whatsapp: `6281393341889`,
-  email: `info@karyabaja.com`,
+  email: `info@adjiejayamakmur.com`,
   address: `Perumahan Kaliwungu Indah Blok B16 No. 15 RT 12/RW 10, Protomulyo, Kaliwungu Selatan, Kendal, Jawa Tengah`,
   openHours: `Senin - Sabtu, 07.00 - 17.00 WIB`,
   mapsEmbed: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5!2d110.2545616!3d-6.9787079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b1f43c532a1%3A0x710befaf9dc6c1e7!2sADJIE+JAYA+MAKMUR!5e0!3m2!1sid!2sid!4v1725753600000!5m2!1sid!2sid`,
-  instagram: `https://instagram.com/karyabaja`,
-  facebook: `https://facebook.com/karyabaja`,
+  instagram: `https://instagram.com/adjiejayamakmur`,
+  facebook: `https://facebook.com/adjiejayamakmur`,
   yearFounded: 2014,
 };
 
