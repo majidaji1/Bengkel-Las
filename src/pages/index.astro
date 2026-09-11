@@ -326,11 +326,11 @@ const ICON_SVG: Record<string, string> = {
                 <div class="ulasan-field">
                   <label>Penilaian</label>
                   <div class="star-picker" id="star-picker" role="group" aria-label="Pilih rating bintang">
-                    <button type="button" data-star="1" aria-label="1 bintang">?</button>
-                    <button type="button" data-star="2" aria-label="2 bintang">?</button>
-                    <button type="button" data-star="3" aria-label="3 bintang">?</button>
-                    <button type="button" data-star="4" aria-label="4 bintang">?</button>
-                    <button type="button" data-star="5" aria-label="5 bintang">?</button>
+                    <button type="button" data-star="1" aria-label="1 bintang">&#9733;</button>
+                    <button type="button" data-star="2" aria-label="2 bintang">&#9733;</button>
+                    <button type="button" data-star="3" aria-label="3 bintang">&#9733;</button>
+                    <button type="button" data-star="4" aria-label="4 bintang">&#9733;</button>
+                    <button type="button" data-star="5" aria-label="5 bintang">&#9733;</button>
                   </div>
                 </div>
               </div>
@@ -509,7 +509,7 @@ const ICON_SVG: Record<string, string> = {
   );
 
   function buatKartuUlasan(u: { nama: string; teks: string; bintang: number; dibuat_pada: string }) {
-    const bintangStr = '?'.repeat(u.bintang) + '?'.repeat(5 - u.bintang);
+    const bintangStr = '\u2605'.repeat(u.bintang) + '\u2606'.repeat(5 - u.bintang);
     const tanggal = new Date(u.dibuat_pada).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
     const el = document.createElement('div');
     el.className = 'ulasan-card';
