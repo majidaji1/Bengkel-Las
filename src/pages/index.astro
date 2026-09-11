@@ -1,9 +1,12 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE, NAV, STATS, LAYANAN, PRODUK, PROSES, TESTIMONI } from '../data/site';
+import { SITE, NAV, LAYANAN, PROSES, GALERI_PROMO, GALERI_BAJA, GALERI_KANOPI } from '../data/site';
 const wa = (teks: string) => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(teks)}`;
 const waDefault = wa('Halo, saya ingin konsultasi mengenai produk Adjie Jaya Makmur.');
-const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
+
+const ICON_SVG: Record<string, string> = {
+  'Tangga Besi': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="21" x2="21" y2="3"/><line x1="3" y1="9" x2="9" y2="3"/><line x1="9" y1="15" x2="15" y2="9"/><line x1="15" y1="21" x2="21" y2="15"/></svg>`,
+};
 ---
 <BaseLayout title={`${SITE.name} — ${SITE.tagline}`} description={SITE.description}>
   <a class="skip-link" href="#main">Langsung ke konten</a>
@@ -19,11 +22,11 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
   <nav class="navbar" id="navbar" aria-label="Navigasi utama">
     <div class="container nav-inner">
       <a href="#hero" class="logo" aria-label="Adjie Jaya Makmur Beranda">
-        <div class="logo-mark" aria-hidden="true">⚙</div>
+        <img src="/img/logo.png" alt="Adjie Jaya Makmur" class="logo-img" />
         <span class="logo-name">Adjie Jaya Makmur</span>
       </a>
       <div class="nav-links">{NAV.map(l => <a href={l.href}>{l.label}</a>)}</div>
-      <a href={waDefault} target="_blank" rel="noopener noreferrer" class="nav-cta">Konsultasi Gratis <span aria-hidden="true">↗</span></a>
+
       <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -31,7 +34,7 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
   </nav>
   <div class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
     {NAV.map(l => <a href={l.href}>{l.label} <span aria-hidden="true">→</span></a>)}
-    <a href={waDefault} target="_blank" rel="noopener noreferrer" style="color:var(--accent);border-bottom:none;margin-top:8px;">Konsultasi Gratis ↗</a>
+
   </div>
 
   <main id="main">
@@ -49,31 +52,24 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
             ))}
           </div>
           <div class="hero-actions">
-            <a href="#produk" class="btn btn-primary"><span class="btn-icon" aria-hidden="true">⊞</span> Lihat Produk</a>
+            <a href="#galeri" class="btn btn-primary"><span class="btn-icon" aria-hidden="true">⊞</span> Lihat Galeri</a>
             <a href={waDefault} target="_blank" rel="noopener noreferrer" class="btn btn-wa">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/></svg>
               Konsultasi Gratis
             </a>
           </div>
         </div>
-        <div class="hero-right" aria-hidden="true">
-          <div class="hero-card">
-            <div class="stats-grid">
-              {STATS.map(s => (
-                <div class="stat-item">
-                  <div class="stat-value">{s.value.replace('+','')}<span>{s.value.includes('+') ? '+' : ''}</span></div>
-                  <div class="stat-label">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div class="hero-badge">
-            <div class="hero-badge-icon">🔥</div>
-            <div class="hero-badge-text"><strong>Pengerjaan Rapi & Presisi</strong><span>Setiap sambungan dicek kualitasnya</span></div>
+        <div class="hero-right">
+          <div class="hero-logo-card">
+            <img src="/img/logo.png" alt="Adjie Jaya Makmur" class="hero-logo-img" />
           </div>
           <div class="hero-badge">
             <div class="hero-badge-icon">📍</div>
-            <div class="hero-badge-text"><strong>Melayani Kaliwungu & Sekitarnya</strong><span>{SITE.openHours}</span></div>
+            <div class="hero-badge-text"><strong>Melayani Kaliwungu, Kendal & Jawa Tengah</strong><span>{SITE.openHours}</span></div>
+          </div>
+          <div class="hero-badge">
+            <div class="hero-badge-icon">✅</div>
+            <div class="hero-badge-text"><strong>Pengerjaan Rapi & Presisi</strong><span>Standar kualitas tinggi setiap proyek</span></div>
           </div>
         </div>
       </div>
@@ -91,7 +87,7 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
         <div class="layanan-grid">
           {LAYANAN.map(l => (
             <div class="layanan-item">
-              <div class="layanan-icon" aria-hidden="true">{l.icon}</div>
+              <div class="layanan-icon" aria-hidden="true" set:html={ICON_SVG[l.title] ?? l.icon} />
               <h3 class="layanan-title">{l.title}</h3>
               <p class="layanan-desc">{l.desc}</p>
             </div>
@@ -100,45 +96,149 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
       </div>
     </section>
 
-    <!-- PRODUK -->
-    <section id="produk" class="section">
+    <!-- GALERI FOTO -->
+    <section id="galeri" class="section">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow">Katalog Produk</p>
-          <h2>Pilih Sesuai<br />Kebutuhan Anda.</h2>
-          <p>Semua produk tersedia dalam berbagai ukuran, motif, dan finishing. Harga sudah termasuk survei dan pemasangan.</p>
+          <p class="eyebrow">Pagar · Tralis · Kanopi · Pintu Besi</p>
+          <h2>Pagar, Tralis &amp; Kanopi<br /><span style="color:var(--accent)">Sesuai Keinginan Anda.</span></h2>
+          <p>Pagar ornamen tempa, tralis jendela custom, hingga pintu sliding garasi — semua kami kerjakan sesuai ukuran dan desain pilihan Anda. Finishing powder coating anti karat, berbagai pilihan warna.</p>
         </div>
-        <div class="produk-filter" role="group" aria-label="Filter kategori produk">
-          {kategori.map((k, i) => (
-            <button class={`filter-btn${i === 0 ? ' active' : ''}`} data-kat={k}>{k}</button>
-          ))}
-        </div>
-        <div class="produk-grid">
-          {PRODUK.map(p => (
-            <article class="produk-card" data-kategori={p.kategori}>
-              <div class="produk-img">
+
+        <!-- SLIDER -->
+        <div class="galeri-slider-wrap">
+          <div class="galeri-slider" id="galeriSlider">
+            {GALERI_PROMO.map((g, i) => (
+              <div class="galeri-slide" data-index={i}>
                 <img
-                  class="produk-img-svg"
-                  src={p.foto}
-                  alt={p.nama}
+                  src={g.foto}
+                  alt={g.judul}
+                  loading={i < 3 ? 'eager' : 'lazy'}
                   width="600"
-                  height="400"
-                  loading="lazy"
+                  height="450"
                 />
-                <span class="produk-kat-badge">{p.kategori}</span>
+                <div class="galeri-slide-info">
+                  <p class="galeri-judul">{g.judul}</p>
+                  <p class="galeri-ket">{g.ket}</p>
+                  <a
+                    href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Halo, saya tertarik dengan produk: ' + g.judul + '. Boleh info harga dan detail?')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="galeri-cta"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/></svg>
+                    Tanya Harga
+                  </a>
+                </div>
               </div>
-              <div class="produk-body">
-                <h3 class="produk-nama">{p.nama}</h3>
-                <p class="produk-bahan">{p.bahan}</p>
-                <p class="produk-harga">{p.harga}</p>
-                <a href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(p.wa)}`} target="_blank" rel="noopener noreferrer" class="produk-wa-link">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/></svg>
-                  Tanya Harga & Detail
-                </a>
-              </div>
-            </article>
-          ))}
+            ))}
+          </div>
+
+          <!-- Tombol Prev / Next -->
+          <button class="galeri-btn galeri-prev" id="galeriPrev" aria-label="Foto sebelumnya">&#8592;</button>
+          <button class="galeri-btn galeri-next" id="galeriNext" aria-label="Foto berikutnya">&#8594;</button>
+
+          <!-- Dots -->
+          <div class="galeri-dots" id="galeriDots">
+            {GALERI_PROMO.map((_, i) => (
+              <button class="galeri-dot" data-dot={i} aria-label={`Foto ${i + 1}`}></button>
+            ))}
+          </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- BAJA PABRIK & GUDANG -->
+    <section id="baja" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Konstruksi Baja Industri</p>
+          <h2>Konstruksi Baja<br /><span style="color:var(--accent)">Pabrik &amp; Gudang.</span></h2>
+          <p>Kami mengerjakan konstruksi baja skala besar untuk kebutuhan industri — rangka pabrik, gudang, carport massal, dan struktur baja komersial lainnya. Presisi, kuat, dan tepat waktu.</p>
+        </div>
+
+        <!-- SLIDER BAJA -->
+        <div class="galeri-slider-wrap">
+          <div class="galeri-slider" id="bajaSlider">
+            {GALERI_BAJA.map((g, i) => (
+              <div class="galeri-slide" data-index={i}>
+                <img
+                  src={g.foto}
+                  alt={g.judul}
+                  loading={i < 3 ? 'eager' : 'lazy'}
+                  width="600"
+                  height="450"
+                />
+                <div class="galeri-slide-info">
+                  <p class="galeri-judul">{g.judul}</p>
+                  <p class="galeri-ket">{g.ket}</p>
+                  <a
+                    href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Halo, saya tertarik dengan proyek: ' + g.judul + '. Boleh info harga dan detail?')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="galeri-cta"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/></svg>
+                    Tanya Harga
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Tombol Prev / Next -->
+          <button class="galeri-btn galeri-prev" id="bajaPrev" aria-label="Foto sebelumnya">&#8592;</button>
+          <button class="galeri-btn galeri-next" id="bajaNext" aria-label="Foto berikutnya">&#8594;</button>
+
+          <!-- Dots -->
+          <div class="galeri-dots" id="bajaDots">
+            {GALERI_BAJA.map((_, i) => (
+              <button class="galeri-dot" data-dot={i} aria-label={`Foto ${i + 1}`}></button>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KANOPI -->
+    <section id="kanopi" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Kanopi Baja & Polycarbonate</p>
+          <h2>Kanopi Kokoh,<br /><span style="color:var(--accent)">Desain Sesuai Selera.</span></h2>
+          <p>Kanopi untuk carport, teras, dan area komersial — rangka baja WF atau baja ringan, atap spandek, alderon, atau polycarbonate. Tahan hujan, tahan panas, desain sesuai permintaan.</p>
+        </div>
+
+        <div class="galeri-slider-wrap">
+          <div class="galeri-slider" id="kanopiSlider">
+            {GALERI_KANOPI.map((g, i) => (
+              <div class="galeri-slide" data-index={i}>
+                <img src={g.foto} alt={g.judul} loading={i < 2 ? 'eager' : 'lazy'} width="600" height="450" />
+                <div class="galeri-slide-info">
+                  <p class="galeri-judul">{g.judul}</p>
+                  <p class="galeri-ket">{g.ket}</p>
+                  <a
+                    href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Halo, saya tertarik dengan ' + g.judul + '. Boleh info harga dan detail?')}`}
+                    target="_blank" rel="noopener noreferrer" class="galeri-cta"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/></svg>
+                    Tanya Harga
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <button class="galeri-btn galeri-prev" id="kanopiPrev" aria-label="Foto sebelumnya">&#8592;</button>
+          <button class="galeri-btn galeri-next" id="kanopiNext" aria-label="Foto berikutnya">&#8594;</button>
+          <div class="galeri-dots" id="kanopiDots">
+            {GALERI_KANOPI.map((_, i) => (
+              <button class="galeri-dot" data-dot={i} aria-label={`Foto ${i + 1}`}></button>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -147,7 +247,6 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
       <div class="container">
         <div class="section-header">
           <p class="eyebrow">Cara Kerja Kami</p>
-          <h2>Proses Sederhana,<br />Hasil Memuaskan.</h2>
         </div>
         <div class="proses-wrap">
           <div class="proses-list">
@@ -179,46 +278,6 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
       </div>
     </section>
 
-    <!-- TESTIMONI -->
-    <section id="testimoni" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Yang Pelanggan Bilang</p>
-          <h2>Cerita Nyata dari<br />Pelanggan Kami.</h2>
-          <p>Kepuasan pelanggan adalah standar kami, bukan sekadar tujuan.</p>
-        </div>
-        <div class="testimoni-grid">
-          {TESTIMONI.map(t => (
-            <div class="testimoni-card">
-              <div class="testimoni-top">
-                <div class="rating" aria-label={`${t.rating} bintang`}>{'★'.repeat(t.rating)}</div>
-                <div class="testimoni-badge">Pelanggan Verified ✓</div>
-              </div>
-              <p class="testimoni-teks">"{t.teks}"</p>
-              <div class="testimoni-author">
-                <img
-                  class="testimoni-avatar"
-                  src={t.foto}
-                  alt={`Foto profil ${t.nama}`}
-                  width="48"
-                  height="48"
-                  loading="lazy"
-                />
-                <div class="testimoni-info">
-                  <div class="testimoni-nama">{t.nama}</div>
-                  <div class="testimoni-meta">
-                    <span class="testimoni-pekerjaan">{t.pekerjaan}</span>
-                    <span class="testimoni-sep" aria-hidden="true">·</span>
-                    <span class="testimoni-lokasi">{t.lokasi}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <!-- KONTAK & MAPS -->
     <section id="kontak" class="section section-alt">
       <div class="container">
@@ -227,11 +286,8 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
           <h2>Siap Membantu<br />Kebutuhan Anda.</h2>
           <p>Kunjungi bengkel kami langsung, atau hubungi via WhatsApp untuk konsultasi gratis tanpa syarat.</p>
         </div>
-        <div class="kontak-grid">
-          <div class="maps-wrap">
-            <iframe src={SITE.mapsEmbed} loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Adjie Jaya Makmur di Google Maps" allowfullscreen></iframe>
-          </div>
-          <div class="kontak-info">
+        <div class="kontak-layout">
+          <div class="kontak-cards">
             <a href={waDefault} target="_blank" rel="noopener noreferrer" class="kontak-card-link kontak-card-wa">
               <div class="kontak-card-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.526 5.827L.073 23.27a.75.75 0 00.92.92l5.444-1.453A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 01-4.93-1.344l-.354-.211-3.674.981.982-3.596-.23-.37A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
@@ -252,24 +308,53 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
               </div>
               <span class="kontak-card-arr" aria-hidden="true">↗</span>
             </a>
-            <div class="kontak-card-static">
-              <div class="kontak-card-icon">📍</div>
-              <div class="kontak-card-body">
-                <div class="kontak-card-title">Alamat Bengkel</div>
-                <div class="kontak-card-val">{SITE.address}</div>
-                <div class="kontak-card-sub">{SITE.openHours}</div>
-              </div>
+          </div>
+
+          <!-- Form Tulis Ulasan -->
+          <div class="kontak-right">
+            <div class="ulasan-form-wrap">
+            <div class="ulasan-form-header">
+              <div class="ulasan-form-title">Tulis Ulasan Anda</div>
+              <div class="ulasan-form-sub">Ulasan Anda akan langsung tampil di website ini</div>
             </div>
-            <div class="kontak-card-static">
-              <div class="kontak-card-icon">✉️</div>
-              <div class="kontak-card-body">
-                <div class="kontak-card-title">Email</div>
-                <div class="kontak-card-val">{SITE.email}</div>
-                <div class="kontak-card-sub">Untuk penawaran & kerjasama</div>
+            <form id="form-ulasan" class="ulasan-form" onsubmit="return false">
+              <div class="ulasan-field-row">
+                <div class="ulasan-field">
+                  <label for="ulasan-nama">Nama Anda</label>
+                  <input id="ulasan-nama" type="text" placeholder="Contoh: Budi Santoso" required />
+                </div>
+                <div class="ulasan-field">
+                  <label>Penilaian</label>
+                  <div class="star-picker" id="star-picker" role="group" aria-label="Pilih rating bintang">
+                    <button type="button" data-star="1" aria-label="1 bintang">★</button>
+                    <button type="button" data-star="2" aria-label="2 bintang">★</button>
+                    <button type="button" data-star="3" aria-label="3 bintang">★</button>
+                    <button type="button" data-star="4" aria-label="4 bintang">★</button>
+                    <button type="button" data-star="5" aria-label="5 bintang">★</button>
+                  </div>
+                </div>
               </div>
+              <div class="ulasan-field">
+                <label for="ulasan-teks">Ulasan / Cerita Pengalaman Anda</label>
+                <textarea id="ulasan-teks" rows="4" placeholder="Ceritakan pengalaman Anda menggunakan jasa kami..." required></textarea>
+              </div>
+              <button type="button" id="kirim-ulasan" class="btn-kirim-ulasan">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+                Kirim Ulasan
+              </button>
+            </form>
             </div>
           </div>
         </div>
+
+        <!-- Daftar Ulasan -->
+        <div id="ulasan-list" class="ulasan-list" aria-live="polite">
+          <p class="ulasan-list-loading">Memuat ulasan...</p>
+        </div>
+
       </div>
     </section>
   </main>
@@ -278,14 +363,13 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <div class="footer-logo-mark" aria-hidden="true">⚙</div>
+        <img src="/img/logo.png" alt="Adjie Jaya Makmur" class="footer-logo-img" />
         <div>
           <div class="footer-name">Adjie Jaya Makmur</div>
           <div class="footer-tagline">Spesialis Konstruksi Besi · Kaliwungu, Jawa Tengah</div>
         </div>
       </div>
       <div class="footer-links">{NAV.map(l => <a href={l.href}>{l.label}</a>)}</div>
-      <div class="footer-copy">© {SITE.yearFounded}–{new Date().getFullYear()} Adjie Jaya Makmur. Semua hak dilindungi.</div>
     </div>
   </footer>
 </BaseLayout>
@@ -313,17 +397,204 @@ const kategori = ['Semua', ...Array.from(new Set(PRODUK.map(p => p.kategori)))];
     });
   });
 
-  // Product filter
-  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
-  const cards = document.querySelectorAll<HTMLElement>('.produk-card');
-  filterBtns.forEach(b => {
-    b.addEventListener('click', () => {
-      filterBtns.forEach(x => x.classList.remove('active'));
-      b.classList.add('active');
-      const kat = b.dataset.kat;
-      cards.forEach(card => {
-        card.style.display = (kat === 'Semua' || card.dataset.kategori === kat) ? '' : 'none';
-      });
+  // ===== GALERI SLIDER =====
+  (function () {
+    const slider = document.getElementById('galeriSlider');
+    const slides = slider?.querySelectorAll('.galeri-slide') as NodeListOf<HTMLElement>;
+    const dots   = document.querySelectorAll('.galeri-dot') as NodeListOf<HTMLElement>;
+    const total  = slides?.length ?? 0;
+    let cur = 0;
+    let timer: ReturnType<typeof setInterval>;
+
+    function goTo(n: number) {
+      cur = (n + total) % total;
+      (slider as HTMLElement).style.transform = `translateX(-${cur * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === cur));
+    }
+
+    function startAuto() {
+      timer = setInterval(() => goTo(cur + 1), 4000);
+    }
+    function stopAuto() { clearInterval(timer); }
+
+    document.getElementById('galeriPrev')?.addEventListener('click', () => { stopAuto(); goTo(cur - 1); startAuto(); });
+    document.getElementById('galeriNext')?.addEventListener('click', () => { stopAuto(); goTo(cur + 1); startAuto(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); }));
+
+    // Swipe support
+    let startX = 0;
+    slider?.addEventListener('touchstart', (e: TouchEvent) => { startX = e.touches[0].clientX; }, { passive: true });
+    slider?.addEventListener('touchend',   (e: TouchEvent) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { stopAuto(); goTo(diff > 0 ? cur + 1 : cur - 1); startAuto(); }
+    });
+
+    goTo(0);
+    startAuto();
+  })();
+
+  // ===== BAJA SLIDER =====
+  (function () {
+    const slider = document.getElementById('bajaSlider');
+    const slides = slider?.querySelectorAll('.galeri-slide') as NodeListOf<HTMLElement>;
+    const dots   = document.querySelectorAll('#bajaDots .galeri-dot') as NodeListOf<HTMLElement>;
+    const total  = slides?.length ?? 0;
+    let cur = 0;
+    let timer: ReturnType<typeof setInterval>;
+
+    function goTo(n: number) {
+      cur = (n + total) % total;
+      (slider as HTMLElement).style.transform = `translateX(-${cur * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === cur));
+    }
+
+    function startAuto() {
+      timer = setInterval(() => goTo(cur + 1), 4000);
+    }
+    function stopAuto() { clearInterval(timer); }
+
+    document.getElementById('bajaPrev')?.addEventListener('click', () => { stopAuto(); goTo(cur - 1); startAuto(); });
+    document.getElementById('bajaNext')?.addEventListener('click', () => { stopAuto(); goTo(cur + 1); startAuto(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); }));
+
+    let startX = 0;
+    slider?.addEventListener('touchstart', (e: TouchEvent) => { startX = e.touches[0].clientX; }, { passive: true });
+    slider?.addEventListener('touchend',   (e: TouchEvent) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { stopAuto(); goTo(diff > 0 ? cur + 1 : cur - 1); startAuto(); }
+    });
+
+    goTo(0);
+    startAuto();
+  })();
+
+  // ===== KANOPI SLIDER =====
+  (function () {
+    const slider = document.getElementById('kanopiSlider');
+    const slides = slider?.querySelectorAll('.galeri-slide') as NodeListOf<HTMLElement>;
+    const dots   = document.querySelectorAll('#kanopiDots .galeri-dot') as NodeListOf<HTMLElement>;
+    const total  = slides?.length ?? 0;
+    let cur = 0;
+    let timer: ReturnType<typeof setInterval>;
+
+    function goTo(n: number) {
+      cur = (n + total) % total;
+      (slider as HTMLElement).style.transform = `translateX(-${cur * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === cur));
+    }
+
+    function startAuto() { timer = setInterval(() => goTo(cur + 1), 4000); }
+    function stopAuto() { clearInterval(timer); }
+
+    document.getElementById('kanopiPrev')?.addEventListener('click', () => { stopAuto(); goTo(cur - 1); startAuto(); });
+    document.getElementById('kanopiNext')?.addEventListener('click', () => { stopAuto(); goTo(cur + 1); startAuto(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); }));
+
+    let startX = 0;
+    slider?.addEventListener('touchstart', (e: TouchEvent) => { startX = e.touches[0].clientX; }, { passive: true });
+    slider?.addEventListener('touchend', (e: TouchEvent) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { stopAuto(); goTo(diff > 0 ? cur + 1 : cur - 1); startAuto(); }
+    });
+
+    goTo(0);
+    startAuto();
+  })();
+
+  // ===== FORM ULASAN =====
+  import { createClient } from '@supabase/supabase-js';
+  const supabase = createClient(
+    'https://xzjignxhgtavtevtuuah.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6amlnbnhoZ3RhdnRldnR1dWFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkxMDY1MDcsImV4cCI6MjEwNDY4MjUwN30.cm4_UYtA69bYiF2Fc-3pcx3lQd5aQ3nuu5TVwNS9dbE'
+  );
+
+  function buatKartuUlasan(u: { nama: string; teks: string; bintang: number; dibuat_pada: string }) {
+    const bintangStr = '★'.repeat(u.bintang) + '☆'.repeat(5 - u.bintang);
+    const tanggal = new Date(u.dibuat_pada).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    const el = document.createElement('div');
+    el.className = 'ulasan-card';
+    el.innerHTML = `
+      <div class="ulasan-card-header">
+        <span class="ulasan-card-nama">${u.nama}</span>
+        <span class="ulasan-card-stars" aria-label="${u.bintang} bintang">${bintangStr}</span>
+      </div>
+      <p class="ulasan-card-pesan">${u.teks}</p>
+      <span class="ulasan-card-tanggal">${tanggal}</span>
+    `;
+    return el;
+  }
+
+  async function muatUlasan() {
+    const list = document.getElementById('ulasan-list')!;
+    const { data, error } = await supabase
+      .from('ulasan')
+      .select('nama, teks, bintang, dibuat_pada')
+      .order('dibuat_pada', { ascending: false })
+      .limit(20);
+
+    if (error || !data?.length) {
+      console.warn('[ulasan fetch]', { error, data });
+      list.innerHTML = '<p class="ulasan-list-empty">Belum ada ulasan. Jadilah yang pertama!</p>';
+      return;
+    }
+    list.innerHTML = '';
+    data.forEach(u => list.appendChild(buatKartuUlasan(u as any)));
+  }
+
+  muatUlasan();
+
+  let selectedStar = 0;
+  const starBtns = document.querySelectorAll('#star-picker button');
+
+  function updateStars(hovered: number) {
+    starBtns.forEach((b, i) => {
+      b.classList.toggle('active', i < hovered);
+    });
+  }
+
+  starBtns.forEach((btn, idx) => {
+    btn.addEventListener('mouseenter', () => updateStars(idx + 1));
+    btn.addEventListener('mouseleave', () => updateStars(selectedStar));
+    btn.addEventListener('click', () => {
+      selectedStar = idx + 1;
+      updateStars(selectedStar);
     });
   });
+
+  document.getElementById('kirim-ulasan')?.addEventListener('click', async () => {
+    const nama = (document.getElementById('ulasan-nama') as HTMLInputElement)?.value.trim();
+    const teks = (document.getElementById('ulasan-teks') as HTMLTextAreaElement)?.value.trim();
+
+    if (!nama) { alert('Silakan isi nama Anda terlebih dahulu.'); return; }
+    if (!selectedStar) { alert('Silakan pilih rating bintang.'); return; }
+    if (!teks) { alert('Silakan tulis ulasan Anda.'); return; }
+
+    const btn = document.getElementById('kirim-ulasan') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Mengirim...';
+
+    const { error } = await supabase.from('ulasan').insert({ nama, teks, bintang: selectedStar });
+
+    if (error) {
+      console.error('[ulasan insert error]', error);
+      alert('Gagal mengirim ulasan. Coba lagi.\n\nError: ' + error.message);
+      btn.disabled = false;
+      btn.textContent = 'Kirim Ulasan';
+    } else {
+      // prepend kartu baru tanpa reload
+      const list = document.getElementById('ulasan-list')!;
+      const kartu = buatKartuUlasan({ nama, teks, bintang: selectedStar, dibuat_pada: new Date().toISOString() });
+      const empty = list.querySelector('.ulasan-list-empty');
+      if (empty) empty.remove();
+      list.prepend(kartu);
+
+      (document.getElementById('ulasan-nama') as HTMLInputElement).value = '';
+      (document.getElementById('ulasan-teks') as HTMLTextAreaElement).value = '';
+      selectedStar = 0;
+      updateStars(0);
+      btn.disabled = false;
+      btn.textContent = 'Kirim Ulasan';
+    }
+  });
+
 </script>

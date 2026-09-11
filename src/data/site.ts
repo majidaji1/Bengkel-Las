@@ -6,10 +6,6 @@ export const SITE = {
   description: `Bengkel las profesional di Kaliwungu, Jawa Tengah. Kanopi baja ringan, tralis jendela, pagar ornamen, pintu besi, tangga, dan railing — dikerjakan presisi, harga transparan.`,
   phone: `081393341889`,
   whatsapp: `6281393341889`,
-  email: `info@adjiejayamakmur.com`,
-  address: `Perumahan Kaliwungu Indah Blok B16 No. 15 RT 12/RW 10, Protomulyo, Kaliwungu Selatan, Kendal, Jawa Tengah`,
-  openHours: `Senin - Sabtu, 07.00 - 17.00 WIB`,
-  mapsEmbed: `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5!2d110.2545616!3d-6.9787079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b1f43c532a1%3A0x710befaf9dc6c1e7!2sADJIE+JAYA+MAKMUR!5e0!3m2!1sid!2sid!4v1725753600000!5m2!1sid!2sid`,
   instagram: `https://instagram.com/adjiejayamakmur`,
   facebook: `https://facebook.com/adjiejayamakmur`,
   yearFounded: 2014,
@@ -17,9 +13,8 @@ export const SITE = {
 
 export const NAV = [
   { href: `#layanan`, label: `Layanan` },
-  { href: `#produk`, label: `Produk` },
+  { href: `#galeri`, label: `Galeri` },
   { href: `#proses`, label: `Cara Kerja` },
-  { href: `#testimoni`, label: `Testimoni` },
   { href: `#kontak`, label: `Kontak` },
 ];
 
@@ -31,24 +26,111 @@ export const STATS = [
 ];
 
 export const LAYANAN = [
-  { title: `Kanopi`, icon: `🏗️`, desc: `Baja ringan, WF, alderon, spandek, polycarbonate. Untuk carport, teras, area komersial. Bentang lebar, anti bocor, tahan cuaca ekstrem.` },
-  { title: `Tralis`, icon: `🔒`, desc: `Tralis jendela dan pintu — motif polos, ornamen klasik, hingga modern minimalis. Finishing powder coating anti karat, berbagai warna.` },
-  { title: `Pagar`, icon: `🛡️`, desc: `Pagar panel besi welded mesh, tempa artistik, hollow minimalis. Untuk hunian, perumahan, hingga kawasan komersial.` },
-  { title: `Pintu Besi`, icon: `🚪`, desc: `Model swing, sliding, dan folding. Plat baja tebal 2-3mm, kunci tanam, finishing powder coating custom warna.` },
-  { title: `Tangga Besi`, icon: `🪜`, desc: `Rangka hollow atau pipa, anak tangga plat bordes anti-slip, railing keselamatan. Desain lurus, putar, atau spiral.` },
-  { title: `Railing dan Custom`, icon: `⚙️`, desc: `Railing balkon, rooftop, tangga dari besi kotak, pipa, atau stainless. Plus pergola, canopy, dan konstruksi custom lainnya.` },
+  {
+    title: `Kanopi`,
+    icon: `🏗️`,
+    desc: `Baja ringan, WF, alderon, spandek, polycarbonate. Untuk carport, teras, area komersial. Bentang lebar, anti bocor, tahan cuaca ekstrem.`,
+  },
+  {
+    title: `Tralis`,
+    icon: `🔒`,
+    desc: `Tralis jendela dan pintu — motif polos, ornamen klasik, hingga modern minimalis. Finishing powder coating anti karat, berbagai warna.`,
+  },
+  {
+    title: `Pagar`,
+    icon: `🛡️`,
+    desc: `Pagar panel besi welded mesh, tempa artistik, hollow minimalis. Untuk hunian, perumahan, hingga kawasan komersial.`,
+  },
+  {
+    title: `Pintu Besi`,
+    icon: `🚪`,
+    desc: `Model swing, sliding, dan folding. Plat baja tebal 2-3mm, kunci tanam, finishing powder coating custom warna.`,
+  },
+  {
+    title: `Tangga Besi`,
+    icon: `🔩`,
+    desc: `Rangka hollow atau pipa, anak tangga plat bordes anti-slip, railing keselamatan. Desain lurus, putar, atau spiral.`,
+  },
+  {
+    title: `Railing dan Custom`,
+    icon: `⚙️`,
+    desc: `Railing balkon, rooftop, tangga dari besi kotak, pipa, atau stainless. Plus pergola, canopy, dan konstruksi custom lainnya.`,
+  },
 ];
 
 export const PRODUK = [
-  { kategori: 'Kanopi', nama: 'Kanopi Baja Ringan', bahan: 'Hollow galvanis + atap alderon/spandek', harga: 'Mulai Rp 250.000/m', foto: '/img/kanopi-baja-ringan.svg', wa: 'Halo, saya tertarik kanopi baja ringan. Boleh info harga dan ukuran?' },
-  { kategori: 'Kanopi', nama: 'Kanopi Baja WF', bahan: 'Profil WF/IWF + spandek/polycarbonate', harga: 'Mulai Rp 400.000/m', foto: '/img/kanopi-baja-wf.svg', wa: 'Halo, saya tertarik kanopi baja WF. Boleh info harga dan ukuran?' },
-  { kategori: 'Tralis', nama: 'Tralis Minimalis', bahan: 'Besi kotak 2x2 cm, powder coating', harga: 'Mulai Rp 180.000/m', foto: '/img/tralis-minimalis.svg', wa: 'Halo, saya tertarik tralis minimalis. Boleh info harga dan ukuran?' },
-  { kategori: 'Tralis', nama: 'Tralis Ornamen', bahan: 'Besi tempa + motif klasik/modern', harga: 'Mulai Rp 280.000/m', foto: '/img/tralis-ornamen.svg', wa: 'Halo, saya tertarik tralis ornamen. Boleh info harga dan ukuran?' },
-  { kategori: 'Pagar', nama: 'Pagar Panel Modern', bahan: 'Welded mesh + tiang hollow galvanis', harga: 'Mulai Rp 220.000/m', foto: '/img/pagar-panel-modern.svg', wa: 'Halo, saya tertarik pagar panel. Boleh info harga dan ukuran?' },
-  { kategori: 'Pagar', nama: 'Pagar Tempa Klasik', bahan: 'Besi tempa artistik + galvanis', harga: 'Mulai Rp 450.000/m', foto: '/img/pagar-tempa-klasik.svg', wa: 'Halo, saya tertarik pagar tempa. Boleh info harga dan ukuran?' },
-  { kategori: 'Pintu', nama: 'Pintu Sliding Garasi', bahan: 'Plat baja 2.5mm + sistem rel smooth', harga: 'Mulai Rp 1.800.000/unit', foto: '/img/pintu-sliding-garasi.svg', wa: 'Halo, saya tertarik pintu sliding. Boleh info harga dan ukuran?' },
-  { kategori: 'Tangga', nama: 'Tangga Besi Lurus', bahan: 'Hollow + plat bordes anti-slip + railing', harga: 'Mulai Rp 2.500.000/unit', foto: '/img/tangga-besi-lurus.svg', wa: 'Halo, saya tertarik tangga besi. Boleh info harga dan ukuran?' },
-  { kategori: 'Railing', nama: 'Railing Balkon', bahan: 'Besi kotak/pipa, powder coating', harga: 'Mulai Rp 150.000/m', foto: '/img/railing-balkon.svg', wa: 'Halo, saya tertarik railing balkon. Boleh info harga dan ukuran?' },
+  {
+    kategori: `Kanopi`,
+    nama: `Kanopi Baja Ringan`,
+    bahan: `Hollow galvanis + atap alderon/spandek`,
+    harga: `Mulai Rp 250.000/m`,
+    foto: `/img/kanopi-baja-ringan.svg`,
+    wa: `Halo, saya tertarik kanopi baja ringan. Boleh info harga dan ukuran?`,
+  },
+  {
+    kategori: `Kanopi`,
+    nama: `Kanopi Baja WF`,
+    bahan: `Profil WF/IWF + spandek/polycarbonate`,
+    harga: `Mulai Rp 400.000/m`,
+    foto: `/img/kanopi-baja-wf.svg`,
+    wa: `Halo, saya tertarik kanopi baja WF. Boleh info harga dan ukuran?`,
+  },
+  {
+    kategori: `Tralis`,
+    nama: `Tralis Minimalis`,
+    bahan: `Besi kotak 2x2 cm, powder coating`,
+    harga: `Mulai Rp 180.000/m`,
+    foto: `/img/tralis-minimalis.svg`,
+    wa: `Halo, saya tertarik tralis minimalis. Boleh info harga dan ukuran?`,
+  },
+  {
+    kategori: `Tralis`,
+    nama: `Tralis Ornamen`,
+    bahan: `Besi tempa + motif klasik/modern`,
+    harga: `Mulai Rp 280.000/m`,
+    foto: `/img/tralis-ornamen.svg`,
+    wa: `Halo, saya tertarik tralis ornamen. Boleh info harga dan ukuran?`,
+  },
+  {
+    kategori: `Pagar`,
+    nama: `Pagar Panel Modern`,
+    bahan: `Welded mesh + tiang hollow galvanis`,
+    harga: `Mulai Rp 220.000/m`,
+    foto: `/img/pagar-panel-modern.svg`,
+    wa: `Halo, saya tertarik pagar panel. Boleh info harga dan ukuran?`,
+  },
+  {
+    kategori: `Pagar`,
+    nama: `Pagar Tempa Klasik`,
+    bahan: `Besi tempa artistik + galvanis`,
+    harga: `Mulai Rp 450.000/m`,
+    foto: `/img/pagar-tempa-klasik.svg`,
+    wa: `Halo, saya tertarik pagar tempa. Boleh info harga dan ukuran?`,
+  },
+  {
+    kategori: `Pintu`,
+    nama: `Pintu Sliding Garasi`,
+    bahan: `Plat baja 2.5mm + sistem rel smooth`,
+    harga: `Mulai Rp 1.800.000/unit`,
+    foto: `/img/pintu-sliding-garasi.svg`,
+    wa: `Halo, saya tertarik pintu sliding. Boleh info harga dan ukuran?`,
+  },
+  {
+    kategori: `Tangga`,
+    nama: `Tangga Besi Lurus`,
+    bahan: `Hollow + plat bordes anti-slip + railing`,
+    harga: `Mulai Rp 2.500.000/unit`,
+    foto: `/img/tangga-besi-lurus.svg`,
+    wa: `Halo, saya tertarik tangga besi. Boleh info harga dan ukuran?`,
+  },
+  {
+    kategori: `Railing`,
+    nama: `Railing Balkon`,
+    bahan: `Besi kotak/pipa, powder coating`,
+    harga: `Mulai Rp 150.000/m`,
+    foto: `/img/railing-balkon.svg`,
+    wa: `Halo, saya tertarik railing balkon. Boleh info harga dan ukuran?`,
+  },
 ];
 
 export const PROSES = [
@@ -57,6 +139,42 @@ export const PROSES = [
   { step: `03`, title: `Desain dan Penawaran`, desc: `Kami buat gambar kerja dan rincian harga transparan. Revisi bebas hingga Anda benar-benar setuju.` },
   { step: `04`, title: `Fabrikasi di Bengkel`, desc: `Pengerjaan di bengkel dengan peralatan las modern. Setiap sambungan dicek kekuatan dan kerapiannya.` },
   { step: `05`, title: `Pasang dan Finishing`, desc: `Tim instalasi memasang di lokasi Anda. Finishing cat atau powder coating untuk hasil yang rapi dan awet.` },
+];
+
+export const GALERI_PROMO = [
+  { foto: `/img/promo/promo-01.jfif`, judul: `Pagar Besi Minimalis Modern`, ket: `Desain elegan, tahan cuaca` },
+  { foto: `/img/promo/promo-02.jfif`, judul: `Kanopi Baja Ringan`,          ket: `Anti bocor & kokoh` },
+  { foto: `/img/promo/promo-03.jfif`, judul: `Tralis Jendela Custom`,       ket: `Keamanan + estetika terjamin` },
+  { foto: `/img/promo/promo-04.jfif`, judul: `Pagar Tempa Artistik`,        ket: `Motif klasik & modern tersedia` },
+  { foto: `/img/promo/promo-05.jfif`, judul: `Pintu Besi Sliding`,          ket: `Sistem rel halus & kuat` },
+  { foto: `/img/promo/promo-06.jfif`, judul: `Kanopi Polycarbonate`,        ket: `Transparan & tahan UV` },
+  { foto: `/img/promo/promo-07.jfif`, judul: `Railing Tangga Besi`,         ket: `Kokoh & desain rapi` },
+  { foto: `/img/promo/promo-08.jfif`, judul: `Pagar Panel Welded Mesh`,     ket: `Kuat & harga ekonomis` },
+  { foto: `/img/promo/promo-09.jfif`, judul: `Tralis Ornamen Klasik`,       ket: `Powder coating anti karat` },
+  { foto: `/img/promo/promo-10.jfif`, judul: `Tangga Besi Spiral`,          ket: `Hemat ruang & artistik` },
+  { foto: `/img/promo/promo-11.jfif`, judul: `Railing Balkon Stainless`,    ket: `Modern & anti karat` },
+  { foto: `/img/promo/promo-12.jfif`, judul: `Kanopi WF Bentang Lebar`,     ket: `Untuk carport & area luas` },
+  { foto: `/img/promo/promo-13.jfif`, judul: `Pagar Hollow Minimalis`,      ket: `Simpel, kuat, modern` },
+  { foto: `/img/promo/promo-14.jfif`, judul: `Pintu Lipat Garasi`,          ket: `Sistem folding presisi` },
+  { foto: `/img/promo/promo-15.jfif`, judul: `Konstruksi Besi Custom`,      ket: `Sesuai kebutuhan Anda` },
+];
+
+export const GALERI_BAJA = [
+  { foto: `/img/baja/3.png`,  judul: `Rangka Baja Pabrik`,         ket: `Struktur baja skala industri` },
+  { foto: `/img/baja/5.png`,  judul: `Atap Baja Bentang Lebar`,    ket: `Tanpa tiang tengah, luas & kokoh` },
+  { foto: `/img/baja/9.png`,  judul: `Konstruksi Gudang Modern`,   ket: `Presisi, rapi, tepat waktu` },
+  { foto: `/img/baja/15.png`, judul: `Rangka Baja Komersial`,      ket: `Untuk gudang & area industri` },
+  { foto: `/img/baja/19.png`, judul: `Struktur Baja Custom`,       ket: `Fabrikasi sesuai kebutuhan proyek` },
+  { foto: `/img/baja/20.png`, judul: `Konstruksi Atap Baja Besar`, ket: `Material pilihan, las presisi` },
+];
+
+export const GALERI_KANOPI = [
+  { foto: `/img/kanopi/10.png`,                                        judul: `Kanopi Baja`,           ket: `Kokoh & tahan cuaca` },
+  { foto: `/img/kanopi/13.png`,                                        judul: `Kanopi Custom`,         ket: `Sesuai ukuran & desain Anda` },
+  { foto: `/img/kanopi/Gemini_Generated_Image_1weww01weww01wew.jfif`, judul: `Kanopi Carport`,        ket: `Lindungi kendaraan dari hujan & panas` },
+  { foto: `/img/kanopi/Gemini_Generated_Image_6us0h6us0h6us0h6.jfif`, judul: `Kanopi Teras`,          ket: `Nyaman & estetik` },
+  { foto: `/img/kanopi/Gemini_Generated_Image_c9jgcyc9jgcyc9jg.jfif`, judul: `Kanopi WF Bentang Lebar`, ket: `Untuk area komersial & luas` },
+  { foto: `/img/kanopi/Gemini_Generated_Image_kliwy7kliwy7kliw.jfif`, judul: `Kanopi Polycarbonate`, ket: `Transparan & tahan UV` },
 ];
 
 export const TESTIMONI = [
