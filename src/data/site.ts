@@ -142,39 +142,39 @@ export const PROSES = [
 ];
 
 export const GALERI_PROMO = [
-  { foto: `/img/promo/promo-01.jfif`, judul: `Pagar Besi Minimalis Modern`, ket: `Desain elegan, tahan cuaca` },
-  { foto: `/img/promo/promo-02.jfif`, judul: `Kanopi Baja Ringan`,          ket: `Anti bocor & kokoh` },
-  { foto: `/img/promo/promo-03.jfif`, judul: `Tralis Jendela Custom`,       ket: `Keamanan + estetika terjamin` },
-  { foto: `/img/promo/promo-04.jfif`, judul: `Pagar Tempa Artistik`,        ket: `Motif klasik & modern tersedia` },
-  { foto: `/img/promo/promo-05.jfif`, judul: `Pintu Besi Sliding`,          ket: `Sistem rel halus & kuat` },
-  { foto: `/img/promo/promo-06.jfif`, judul: `Kanopi Polycarbonate`,        ket: `Transparan & tahan UV` },
-  { foto: `/img/promo/promo-07.jfif`, judul: `Railing Tangga Besi`,         ket: `Kokoh & desain rapi` },
-  { foto: `/img/promo/promo-08.jfif`, judul: `Pagar Panel Welded Mesh`,     ket: `Kuat & harga ekonomis` },
-  { foto: `/img/promo/promo-09.jfif`, judul: `Tralis Ornamen Klasik`,       ket: `Powder coating anti karat` },
-  { foto: `/img/promo/promo-10.jfif`, judul: `Tangga Besi Spiral`,          ket: `Hemat ruang & artistik` },
-  { foto: `/img/promo/promo-11.jfif`, judul: `Railing Balkon Stainless`,    ket: `Modern & anti karat` },
-  { foto: `/img/promo/promo-12.jfif`, judul: `Kanopi WF Bentang Lebar`,     ket: `Untuk carport & area luas` },
-  { foto: `/img/promo/promo-13.jfif`, judul: `Pagar Hollow Minimalis`,      ket: `Simpel, kuat, modern` },
-  { foto: `/img/promo/promo-14.jfif`, judul: `Pintu Lipat Garasi`,          ket: `Sistem folding presisi` },
-  { foto: `/img/promo/promo-15.jfif`, judul: `Konstruksi Besi Custom`,      ket: `Sesuai kebutuhan Anda` },
+  { foto: `/img/promo/promo-01.webp`, judul: `Pagar Besi Minimalis Modern`, ket: `Desain elegan, tahan cuaca` },
+  { foto: `/img/promo/promo-02.webp`, judul: `Kanopi Baja Ringan`,          ket: `Anti bocor & kokoh` },
+  { foto: `/img/promo/promo-03.webp`, judul: `Tralis Jendela Custom`,       ket: `Keamanan + estetika terjamin` },
+  { foto: `/img/promo/promo-04.webp`, judul: `Pagar Tempa Artistik`,        ket: `Motif klasik & modern tersedia` },
+  { foto: `/img/promo/promo-05.webp`, judul: `Pintu Besi Sliding`,          ket: `Sistem rel halus & kuat` },
+  { foto: `/img/promo/promo-06.webp`, judul: `Kanopi Polycarbonate`,        ket: `Transparan & tahan UV` },
+  { foto: `/img/promo/promo-07.webp`, judul: `Railing Tangga Besi`,         ket: `Kokoh & desain rapi` },
+  { foto: `/img/promo/promo-08.webp`, judul: `Pagar Panel Welded Mesh`,     ket: `Kuat & harga ekonomis` },
+  { foto: `/img/promo/promo-09.webp`, judul: `Tralis Ornamen Klasik`,       ket: `Powder coating anti karat` },
+  { foto: `/img/promo/promo-10.webp`, judul: `Tangga Besi Spiral`,          ket: `Hemat ruang & artistik` },
+  { foto: `/img/promo/promo-11.webp`, judul: `Railing Balkon Stainless`,    ket: `Modern & anti karat` },
+  { foto: `/img/promo/promo-12.webp`, judul: `Kanopi WF Bentang Lebar`,     ket: `Untuk carport & area luas` },
+  { foto: `/img/promo/promo-13.webp`, judul: `Pagar Hollow Minimalis`,      ket: `Simpel, kuat, modern` },
+  { foto: `/img/promo/promo-14.webp`, judul: `Pintu Lipat Garasi`,          ket: `Sistem folding presisi` },
+  { foto: `/img/promo/promo-15.webp`, judul: `Konstruksi Besi Custom`,      ket: `Sesuai kebutuhan Anda` },
 ];
 
 export const GALERI_BAJA = [
-  { foto: `/img/baja/3.png`,  judul: `Rangka Baja Pabrik`,         ket: `Struktur baja skala industri` },
-  { foto: `/img/baja/5.png`,  judul: `Atap Baja Bentang Lebar`,    ket: `Tanpa tiang tengah, luas & kokoh` },
-  { foto: `/img/baja/9.png`,  judul: `Konstruksi Gudang Modern`,   ket: `Presisi, rapi, tepat waktu` },
-  { foto: `/img/baja/15.png`, judul: `Rangka Baja Komersial`,      ket: `Untuk gudang & area industri` },
-  { foto: `/img/baja/19.png`, judul: `Struktur Baja Custom`,       ket: `Fabrikasi sesuai kebutuhan proyek` },
-  { foto: `/img/baja/20.png`, judul: `Konstruksi Atap Baja Besar`, ket: `Material pilihan, las presisi` },
+  { foto: `/img/baja/3.webp`,  judul: `Rangka Baja Pabrik`,         ket: `Struktur baja skala industri` },
+  { foto: `/img/baja/5.webp`,  judul: `Atap Baja Bentang Lebar`,    ket: `Tanpa tiang tengah, luas & kokoh` },
+  { foto: `/img/baja/9.webp`,  judul: `Konstruksi Gudang Modern`,   ket: `Presisi, rapi, tepat waktu` },
+  { foto: `/img/baja/15.webp`, judul: `Rangka Baja Komersial`,      ket: `Untuk gudang & area industri` },
+  { foto: `/img/baja/19.webp`, judul: `Struktur Baja Custom`,       ket: `Fabrikasi sesuai kebutuhan proyek` },
+  { foto: `/img/baja/20.webp`, judul: `Konstruksi Atap Baja Besar`, ket: `Material pilihan, las presisi` },
 ];
 
 export const GALERI_KANOPI = [
-  { foto: `/img/kanopi/10.png`,                                        judul: `Kanopi Baja`,           ket: `Kokoh & tahan cuaca` },
-  { foto: `/img/kanopi/13.png`,                                        judul: `Kanopi Custom`,         ket: `Sesuai ukuran & desain Anda` },
-  { foto: `/img/kanopi/Gemini_Generated_Image_1weww01weww01wew.jfif`, judul: `Kanopi Carport`,        ket: `Lindungi kendaraan dari hujan & panas` },
-  { foto: `/img/kanopi/Gemini_Generated_Image_6us0h6us0h6us0h6.jfif`, judul: `Kanopi Teras`,          ket: `Nyaman & estetik` },
-  { foto: `/img/kanopi/Gemini_Generated_Image_c9jgcyc9jgcyc9jg.jfif`, judul: `Kanopi WF Bentang Lebar`, ket: `Untuk area komersial & luas` },
-  { foto: `/img/kanopi/Gemini_Generated_Image_kliwy7kliwy7kliw.jfif`, judul: `Kanopi Polycarbonate`, ket: `Transparan & tahan UV` },
+  { foto: `/img/kanopi/10.webp`,                                        judul: `Kanopi Baja`,             ket: `Kokoh & tahan cuaca` },
+  { foto: `/img/kanopi/13.webp`,                                        judul: `Kanopi Custom`,           ket: `Sesuai ukuran & desain Anda` },
+  { foto: `/img/kanopi/Gemini_Generated_Image_1weww01weww01wew.webp`, judul: `Kanopi Carport`,          ket: `Lindungi kendaraan dari hujan & panas` },
+  { foto: `/img/kanopi/Gemini_Generated_Image_6us0h6us0h6us0h6.webp`, judul: `Kanopi Teras`,            ket: `Nyaman & estetik` },
+  { foto: `/img/kanopi/Gemini_Generated_Image_c9jgcyc9jgcyc9jg.webp`, judul: `Kanopi WF Bentang Lebar`, ket: `Untuk area komersial & luas` },
+  { foto: `/img/kanopi/Gemini_Generated_Image_kliwy7kliwy7kliw.webp`, judul: `Kanopi Polycarbonate`,   ket: `Transparan & tahan UV` },
 ];
 
 export const TESTIMONI = [

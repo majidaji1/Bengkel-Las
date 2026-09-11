@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE, NAV, LAYANAN, PROSES, GALERI_PROMO, GALERI_BAJA, GALERI_KANOPI } from '../data/site';
 const wa = (teks: string) => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(teks)}`;
@@ -8,7 +8,7 @@ const ICON_SVG: Record<string, string> = {
   'Tangga Besi': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="21" x2="21" y2="3"/><line x1="3" y1="9" x2="9" y2="3"/><line x1="9" y1="15" x2="15" y2="9"/><line x1="15" y1="21" x2="21" y2="15"/></svg>`,
 };
 ---
-<BaseLayout title={`${SITE.name} — ${SITE.tagline}`} description={SITE.description}>
+<BaseLayout title={`${SITE.name} � ${SITE.tagline}`} description={SITE.description}>
   <a class="skip-link" href="#main">Langsung ke konten</a>
 
   <!-- WA Float -->
@@ -22,7 +22,7 @@ const ICON_SVG: Record<string, string> = {
   <nav class="navbar" id="navbar" aria-label="Navigasi utama">
     <div class="container nav-inner">
       <a href="#hero" class="logo" aria-label="Adjie Jaya Makmur Beranda">
-        <img src="/img/logo.png" alt="Adjie Jaya Makmur" class="logo-img" />
+        <img src="/img/logo.webp" alt="Adjie Jaya Makmur" class="logo-img" />
         <span class="logo-name">Adjie Jaya Makmur</span>
       </a>
       <div class="nav-links">{NAV.map(l => <a href={l.href}>{l.label}</a>)}</div>
@@ -33,7 +33,7 @@ const ICON_SVG: Record<string, string> = {
     </div>
   </nav>
   <div class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
-    {NAV.map(l => <a href={l.href}>{l.label} <span aria-hidden="true">→</span></a>)}
+    {NAV.map(l => <a href={l.href}>{l.label} <span aria-hidden="true">?</span></a>)}
 
   </div>
 
@@ -43,7 +43,7 @@ const ICON_SVG: Record<string, string> = {
       <div class="hero-grid-bg" aria-hidden="true"></div>
       <div class="container hero-content">
         <div class="hero-left">
-          <p class="eyebrow hero-eyebrow">Bengkel Las Profesional · Kaliwungu, Jawa Tengah</p>
+          <p class="eyebrow hero-eyebrow">Bengkel Las Profesional � Kaliwungu, Jawa Tengah</p>
           <h1 class="hero-title">Konstruksi Besi<br /><span class="hero-title-accent">Berkualitas.</span></h1>
           <p class="hero-sub">{SITE.tagline}</p>
           <div class="hero-tags">
@@ -52,7 +52,7 @@ const ICON_SVG: Record<string, string> = {
             ))}
           </div>
           <div class="hero-actions">
-            <a href="#galeri" class="btn btn-primary"><span class="btn-icon" aria-hidden="true">⊞</span> Lihat Galeri</a>
+            <a href="#galeri" class="btn btn-primary"><span class="btn-icon" aria-hidden="true">?</span> Lihat Galeri</a>
             <a href={waDefault} target="_blank" rel="noopener noreferrer" class="btn btn-wa">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413z"/></svg>
               Konsultasi Gratis
@@ -61,14 +61,14 @@ const ICON_SVG: Record<string, string> = {
         </div>
         <div class="hero-right">
           <div class="hero-logo-card">
-            <img src="/img/logo.png" alt="Adjie Jaya Makmur" class="hero-logo-img" />
+            <img src="/img/logo.webp" alt="Adjie Jaya Makmur" class="hero-logo-img" />
           </div>
           <div class="hero-badge">
-            <div class="hero-badge-icon">📍</div>
+            <div class="hero-badge-icon">??</div>
             <div class="hero-badge-text"><strong>Melayani Kaliwungu, Kendal & Jawa Tengah</strong><span>{SITE.openHours}</span></div>
           </div>
           <div class="hero-badge">
-            <div class="hero-badge-icon">✅</div>
+            <div class="hero-badge-icon">?</div>
             <div class="hero-badge-text"><strong>Pengerjaan Rapi & Presisi</strong><span>Standar kualitas tinggi setiap proyek</span></div>
           </div>
         </div>
@@ -82,7 +82,7 @@ const ICON_SVG: Record<string, string> = {
         <div class="section-header">
           <p class="eyebrow">Apa yang Kami Kerjakan</p>
           <h2>Semua Kebutuhan<br />Konstruksi Besi Anda.</h2>
-          <p>Dari kanopi rumah tinggal hingga konstruksi besi skala besar — kami kerjakan dengan standar yang sama: presisi, kuat, dan rapi.</p>
+          <p>Dari kanopi rumah tinggal hingga konstruksi besi skala besar � kami kerjakan dengan standar yang sama: presisi, kuat, dan rapi.</p>
         </div>
         <div class="layanan-grid">
           {LAYANAN.map(l => (
@@ -100,9 +100,9 @@ const ICON_SVG: Record<string, string> = {
     <section id="galeri" class="section">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow">Pagar · Tralis · Kanopi · Pintu Besi</p>
+          <p class="eyebrow">Pagar � Tralis � Kanopi � Pintu Besi</p>
           <h2>Pagar, Tralis &amp; Kanopi<br /><span style="color:var(--accent)">Sesuai Keinginan Anda.</span></h2>
-          <p>Pagar ornamen tempa, tralis jendela custom, hingga pintu sliding garasi — semua kami kerjakan sesuai ukuran dan desain pilihan Anda. Finishing powder coating anti karat, berbagai pilihan warna.</p>
+          <p>Pagar ornamen tempa, tralis jendela custom, hingga pintu sliding garasi � semua kami kerjakan sesuai ukuran dan desain pilihan Anda. Finishing powder coating anti karat, berbagai pilihan warna.</p>
         </div>
 
         <!-- SLIDER -->
@@ -155,7 +155,7 @@ const ICON_SVG: Record<string, string> = {
         <div class="section-header">
           <p class="eyebrow">Konstruksi Baja Industri</p>
           <h2>Konstruksi Baja<br /><span style="color:var(--accent)">Pabrik &amp; Gudang.</span></h2>
-          <p>Kami mengerjakan konstruksi baja skala besar untuk kebutuhan industri — rangka pabrik, gudang, carport massal, dan struktur baja komersial lainnya. Presisi, kuat, dan tepat waktu.</p>
+          <p>Kami mengerjakan konstruksi baja skala besar untuk kebutuhan industri � rangka pabrik, gudang, carport massal, dan struktur baja komersial lainnya. Presisi, kuat, dan tepat waktu.</p>
         </div>
 
         <!-- SLIDER BAJA -->
@@ -208,7 +208,7 @@ const ICON_SVG: Record<string, string> = {
         <div class="section-header">
           <p class="eyebrow">Kanopi Baja & Polycarbonate</p>
           <h2>Kanopi Kokoh,<br /><span style="color:var(--accent)">Desain Sesuai Selera.</span></h2>
-          <p>Kanopi untuk carport, teras, dan area komersial — rangka baja WF atau baja ringan, atap spandek, alderon, atau polycarbonate. Tahan hujan, tahan panas, desain sesuai permintaan.</p>
+          <p>Kanopi untuk carport, teras, dan area komersial � rangka baja WF atau baja ringan, atap spandek, alderon, atau polycarbonate. Tahan hujan, tahan panas, desain sesuai permintaan.</p>
         </div>
 
         <div class="galeri-slider-wrap">
@@ -295,18 +295,18 @@ const ICON_SVG: Record<string, string> = {
               <div class="kontak-card-body">
                 <div class="kontak-card-title">WhatsApp</div>
                 <div class="kontak-card-val">{SITE.phone}</div>
-                <div class="kontak-card-sub">Respons cepat · Konsultasi gratis</div>
+                <div class="kontak-card-sub">Respons cepat � Konsultasi gratis</div>
               </div>
-              <span class="kontak-card-arr" aria-hidden="true">↗</span>
+              <span class="kontak-card-arr" aria-hidden="true">?</span>
             </a>
             <a href={`tel:${SITE.phone}`} class="kontak-card-link">
-              <div class="kontak-card-icon">📞</div>
+              <div class="kontak-card-icon">??</div>
               <div class="kontak-card-body">
                 <div class="kontak-card-title">Telepon</div>
                 <div class="kontak-card-val">{SITE.phone}</div>
                 <div class="kontak-card-sub">{SITE.openHours}</div>
               </div>
-              <span class="kontak-card-arr" aria-hidden="true">↗</span>
+              <span class="kontak-card-arr" aria-hidden="true">?</span>
             </a>
           </div>
 
@@ -326,11 +326,11 @@ const ICON_SVG: Record<string, string> = {
                 <div class="ulasan-field">
                   <label>Penilaian</label>
                   <div class="star-picker" id="star-picker" role="group" aria-label="Pilih rating bintang">
-                    <button type="button" data-star="1" aria-label="1 bintang">★</button>
-                    <button type="button" data-star="2" aria-label="2 bintang">★</button>
-                    <button type="button" data-star="3" aria-label="3 bintang">★</button>
-                    <button type="button" data-star="4" aria-label="4 bintang">★</button>
-                    <button type="button" data-star="5" aria-label="5 bintang">★</button>
+                    <button type="button" data-star="1" aria-label="1 bintang">?</button>
+                    <button type="button" data-star="2" aria-label="2 bintang">?</button>
+                    <button type="button" data-star="3" aria-label="3 bintang">?</button>
+                    <button type="button" data-star="4" aria-label="4 bintang">?</button>
+                    <button type="button" data-star="5" aria-label="5 bintang">?</button>
                   </div>
                 </div>
               </div>
@@ -363,10 +363,10 @@ const ICON_SVG: Record<string, string> = {
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="/img/logo.png" alt="Adjie Jaya Makmur" class="footer-logo-img" />
+        <img src="/img/logo.webp" alt="Adjie Jaya Makmur" class="footer-logo-img" />
         <div>
           <div class="footer-name">Adjie Jaya Makmur</div>
-          <div class="footer-tagline">Spesialis Konstruksi Besi · Kaliwungu, Jawa Tengah</div>
+          <div class="footer-tagline">Spesialis Konstruksi Besi � Kaliwungu, Jawa Tengah</div>
         </div>
       </div>
       <div class="footer-links">{NAV.map(l => <a href={l.href}>{l.label}</a>)}</div>
@@ -509,7 +509,7 @@ const ICON_SVG: Record<string, string> = {
   );
 
   function buatKartuUlasan(u: { nama: string; teks: string; bintang: number; dibuat_pada: string }) {
-    const bintangStr = '★'.repeat(u.bintang) + '☆'.repeat(5 - u.bintang);
+    const bintangStr = '?'.repeat(u.bintang) + '?'.repeat(5 - u.bintang);
     const tanggal = new Date(u.dibuat_pada).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
     const el = document.createElement('div');
     el.className = 'ulasan-card';
