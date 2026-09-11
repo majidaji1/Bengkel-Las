@@ -1,4 +1,4 @@
----
+﻿﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE, NAV, LAYANAN, PROSES, GALERI_PROMO, GALERI_BAJA, GALERI_KANOPI } from '../data/site';
 const wa = (teks: string) => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(teks)}`;
@@ -8,7 +8,7 @@ const ICON_SVG: Record<string, string> = {
   'Tangga Besi': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="21" x2="21" y2="3"/><line x1="3" y1="9" x2="9" y2="3"/><line x1="9" y1="15" x2="15" y2="9"/><line x1="15" y1="21" x2="21" y2="15"/></svg>`,
 };
 ---
-<BaseLayout title={`${SITE.name} � ${SITE.tagline}`} description={SITE.description}>
+<BaseLayout title={`${SITE.name} &middot; ${SITE.tagline}`} description={SITE.description}>
   <a class="skip-link" href="#main">Langsung ke konten</a>
 
   <!-- WA Float -->
@@ -33,7 +33,7 @@ const ICON_SVG: Record<string, string> = {
     </div>
   </nav>
   <div class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
-    {NAV.map(l => <a href={l.href}>{l.label} <span aria-hidden="true">?</span></a>)}
+    {NAV.map(l => <a href={l.href}>{l.label} <span aria-hidden="true">&#8250;</span></a>)}
 
   </div>
 
@@ -43,7 +43,7 @@ const ICON_SVG: Record<string, string> = {
       <div class="hero-grid-bg" aria-hidden="true"></div>
       <div class="container hero-content">
         <div class="hero-left">
-          <p class="eyebrow hero-eyebrow">Bengkel Las Profesional � Kaliwungu, Jawa Tengah</p>
+          <p class="eyebrow hero-eyebrow">Bengkel Las Profesional &middot; Kaliwungu, Jawa Tengah</p>
           <h1 class="hero-title">Konstruksi Besi<br /><span class="hero-title-accent">Berkualitas.</span></h1>
           <p class="hero-sub">{SITE.tagline}</p>
           <div class="hero-tags">
@@ -82,7 +82,7 @@ const ICON_SVG: Record<string, string> = {
         <div class="section-header">
           <p class="eyebrow">Apa yang Kami Kerjakan</p>
           <h2>Semua Kebutuhan<br />Konstruksi Besi Anda.</h2>
-          <p>Dari kanopi rumah tinggal hingga konstruksi besi skala besar � kami kerjakan dengan standar yang sama: presisi, kuat, dan rapi.</p>
+          <p>Dari kanopi rumah tinggal hingga konstruksi besi skala besar &mdash; kami kerjakan dengan standar yang sama: presisi, kuat, dan rapi.</p>
         </div>
         <div class="layanan-grid">
           {LAYANAN.map(l => (
@@ -100,9 +100,9 @@ const ICON_SVG: Record<string, string> = {
     <section id="galeri" class="section">
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow">Pagar � Tralis � Kanopi � Pintu Besi</p>
+          <p class="eyebrow">Pagar &middot; Tralis &middot; Kanopi &middot; Pintu Besi</p>
           <h2>Pagar, Tralis &amp; Kanopi<br /><span style="color:var(--accent)">Sesuai Keinginan Anda.</span></h2>
-          <p>Pagar ornamen tempa, tralis jendela custom, hingga pintu sliding garasi � semua kami kerjakan sesuai ukuran dan desain pilihan Anda. Finishing powder coating anti karat, berbagai pilihan warna.</p>
+          <p>Pagar ornamen tempa, tralis jendela custom, hingga pintu sliding garasi &mdash; semua kami kerjakan sesuai ukuran dan desain pilihan Anda. Finishing powder coating anti karat, berbagai pilihan warna.</p>
         </div>
 
         <!-- SLIDER -->
@@ -155,7 +155,7 @@ const ICON_SVG: Record<string, string> = {
         <div class="section-header">
           <p class="eyebrow">Konstruksi Baja Industri</p>
           <h2>Konstruksi Baja<br /><span style="color:var(--accent)">Pabrik &amp; Gudang.</span></h2>
-          <p>Kami mengerjakan konstruksi baja skala besar untuk kebutuhan industri � rangka pabrik, gudang, carport massal, dan struktur baja komersial lainnya. Presisi, kuat, dan tepat waktu.</p>
+          <p>Kami mengerjakan konstruksi baja skala besar untuk kebutuhan industri &mdash; rangka pabrik, gudang, carport massal, dan struktur baja komersial lainnya. Presisi, kuat, dan tepat waktu.</p>
         </div>
 
         <!-- SLIDER BAJA -->
@@ -208,7 +208,7 @@ const ICON_SVG: Record<string, string> = {
         <div class="section-header">
           <p class="eyebrow">Kanopi Baja & Polycarbonate</p>
           <h2>Kanopi Kokoh,<br /><span style="color:var(--accent)">Desain Sesuai Selera.</span></h2>
-          <p>Kanopi untuk carport, teras, dan area komersial � rangka baja WF atau baja ringan, atap spandek, alderon, atau polycarbonate. Tahan hujan, tahan panas, desain sesuai permintaan.</p>
+          <p>Kanopi untuk carport, teras, dan area komersial &mdash; rangka baja WF atau baja ringan, atap spandek, alderon, atau polycarbonate. Tahan hujan, tahan panas, desain sesuai permintaan.</p>
         </div>
 
         <div class="galeri-slider-wrap">
@@ -295,7 +295,7 @@ const ICON_SVG: Record<string, string> = {
               <div class="kontak-card-body">
                 <div class="kontak-card-title">WhatsApp</div>
                 <div class="kontak-card-val">{SITE.phone}</div>
-                <div class="kontak-card-sub">Respons cepat � Konsultasi gratis</div>
+                <div class="kontak-card-sub">Respons cepat &middot; Konsultasi gratis</div>
               </div>
               <span class="kontak-card-arr" aria-hidden="true">?</span>
             </a>
@@ -366,7 +366,7 @@ const ICON_SVG: Record<string, string> = {
         <img src="/img/logo.webp" alt="Adjie Jaya Makmur" class="footer-logo-img" />
         <div>
           <div class="footer-name">Adjie Jaya Makmur</div>
-          <div class="footer-tagline">Spesialis Konstruksi Besi � Kaliwungu, Jawa Tengah</div>
+          <div class="footer-tagline">Spesialis Konstruksi Besi &middot; Kaliwungu, Jawa Tengah</div>
         </div>
       </div>
       <div class="footer-links">{NAV.map(l => <a href={l.href}>{l.label}</a>)}</div>
